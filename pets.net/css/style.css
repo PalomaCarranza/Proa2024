@@ -12,6 +12,8 @@ header, footer {
     padding: 1em;
 }
 
+
+
 main {
     padding: 2em;
 }
@@ -58,6 +60,12 @@ a {
     margin: 0.5em;
     text-align: center;
     border-radius: 4px;
+}
+
+.carousel {
+    
+
+
 }
 
 /* Flex Direction */
