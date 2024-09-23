@@ -1,4 +1,5 @@
 from Personaje_clase import Personaje
+import random
 
 # nombre, altura, velocidad, recistencia, fuerza
 cantidad_personaje = 0
@@ -31,10 +32,11 @@ while True:
     print(f"Cantidad de personajes creados: {cantidad_personaje}")
 
   elif opcion == 2:
-    if cantidad_personaje == 0:
-      print("No hay personajes creados para jugar.")
+    if cantidad_personaje == 0 or cantidad_personaje == 1:
+      print("No hay suficientes personajes creados para jugar.")
+      print (f"Cantidad de personajes: {cantidad_personaje}")
     else:
-      print("Iniciando la carrera con los siguientes personajes: ")
+      print("Iniciando el juego con los siguientes personajes: ")
       for personaje in personajes:
         print(f" {personaje.nombre}")
 
