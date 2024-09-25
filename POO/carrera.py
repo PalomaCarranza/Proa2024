@@ -39,6 +39,7 @@ while True:
       print("Iniciando el juego con los siguientes personajes: ")
       for personaje in personajes:
         print(f" {personaje.nombre}")
+        personaje.atacar (otro_personaje)
 
     continue
    
