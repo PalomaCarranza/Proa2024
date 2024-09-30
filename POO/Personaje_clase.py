@@ -3,11 +3,11 @@ class Personaje:
     estado = True # Vivo
     vida = 100
     # Constructor / Atributo de instancia
-    def __init__(self, nombre, altura, velocidad, recistencia, fuerza):
+    def __init__(self, nombre, altura, velocidad, resistencia, fuerza):
         self.nombre = nombre
         self.altura = altura
         self.velocidad = velocidad
-        self.recistencia = recistencia
+        self.resistencia = resistencia
         self.fuerza = fuerza
         self.estado = Personaje.estado
         self.vida = Personaje.vida
@@ -32,6 +32,8 @@ class Personaje:
             print(f"{self.nombre} ya está muerto.")
 
     def mostrar_info(self):
+        print(f"Nombre: {self.nombre}")
         print(f"Estado: {self.estado}")
         print(f"Vida: {self.vida}")
-        print(f"Resistencia: {self.recistencia}")
+        print(f"Resistencia: {self.resistencia}")
+        print(f"Fuerza: {self.fuerza}")

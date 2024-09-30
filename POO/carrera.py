@@ -1,9 +1,7 @@
-from Personaje_clase import Personaje
-import random
+from Personaje_clase import Personaje # Sirve para que python vaya al otro archivo y taiga lo que necesite
 
-# nombre, altura, velocidad, recistencia, fuerza
 cantidad_personaje = 0
-personajes = []
+personajes = [] # Lista donde se guardan los personajes
 while True:
 
   menuInicio = '''
@@ -40,8 +38,6 @@ while True:
       for personaje in personajes:
         print(f" {personaje.nombre}")
         personaje.atacar (otro_personaje)
-
-    continue
    
 
   elif opcion == 3: # Sale del programa
