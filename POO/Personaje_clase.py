@@ -15,7 +15,7 @@ class Personaje:
     
     def atacar(self, otro_personaje):
         if self.estado:
-            danio = self.fuerza - (otro_personaje.resistencia)
+            danio = self.fuerza - (otro_personaje.resistencia) # El daño es igual a la fuerza del personaje que ataca menos la resistencia del que recibe el daño
             print(f"{self.nombre} ataca a {otro_personaje.nombre} causando {danio} de daño.")
             otro_personaje.recibir_danno(danio)
         else:

@@ -37,7 +37,7 @@ while True:
       print("Iniciando el juego con los siguientes personajes: ")
       for personaje in personajes:
         print(f" {personaje.nombre}")
-        personaje.atacar (otro_personaje)
+        nuevo_personaje.atacar()
    
 
   elif opcion == 3: # Sale del programa
