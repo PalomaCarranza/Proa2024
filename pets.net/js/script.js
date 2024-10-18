@@ -2,7 +2,7 @@ document. addEventListener('DOMContentLoaded', function() {
     const inputBusqueda = document.getElementById('search-input');
     const botonesVet = document.querySelectorAll('.vet-locations button');
 
-    inputBusqueda.addEventListener('input', fuction(){
+    inputBusqueda.addEventListener('input', function(){
         filtroVetLocalidad();
     });
 
