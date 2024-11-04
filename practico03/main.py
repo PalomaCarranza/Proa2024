@@ -6,7 +6,7 @@ from ClsProfesor import Profesor
 
 def conectar_db():
     # Conectar a la base de datos 'escuela.db'
-    conn = sqlite3.connect('escuela.db')
+    conn = sqlite3.connect('escolar.db')
     return conn
 
 def menu():
@@ -52,7 +52,7 @@ def main():
             estado = input('Estado del estudiante: ')
             email = input('Email del estudiante: ')
             # Llama al método agregar para guardar el estudiante
-            Estudiante.guardar(conn, legajo_id, dni, nombre, apellido, edad, fecha_nacimiento, curso, estado, email)
+            Estudiante.guardar(legajo_id, dni, nombre, apellido, edad, fecha_nacimiento, curso, estado, email)
 
         # Opción 2: Agregar profesor
         elif opcion == 2:
@@ -63,7 +63,7 @@ def main():
             estado_profesor = input('Estado del profesor: ')
             email_profesor = input('Email del profesor: ')
             # Llama al método agregar para guardar el profesor
-            Profesor.guardar(conn, dni_id, nombre_profesor, apellido_profesor, curso_profesor, estado_profesor, email_profesor)
+            Profesor.guardar(dni_id, nombre_profesor, apellido_profesor, curso_profesor, estado_profesor, email_profesor)
 
         # Opción 3: Agregar materia
         elif opcion == 3:
@@ -73,7 +73,7 @@ def main():
             descripcion = input('Descripción de la materia: ')
             horario = input('Horario de la materia: ')
             # Llama al método agregar para guardar la materia
-            Materia.guardar(conn, id_materia, nombre_materia, curso_materia, descripcion, horario)
+            Materia.guardar(id_materia, nombre_materia, curso_materia, descripcion, horario)
 
         # Opción 4: Agregar calificación
         elif opcion == 4:
@@ -82,7 +82,7 @@ def main():
             nota = input('Nota: ')
             fecha = input('Fecha: ')
             # Llama al método agregar para guardar la calificación
-            Calificacion.guardar(conn, legajo_id, id_materia, nota, fecha)
+            Calificacion.guardar(legajo_id, id_materia, nota, fecha)
 
         # Opción 5: Mostrar estudiantes
         elif opcion == 5:

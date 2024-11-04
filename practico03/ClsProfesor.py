@@ -29,7 +29,7 @@ class Profesor:
         c = conn.cursor() # Crear un cursor para interactuar con la base de datos.
 
         # Ejecutar una consulta SQL para seleccionar todos los registros de la tabla 'Profesores'.
-        c.execute('SELECT * FROM Profesores')
+        c.execute('SELECT * FROM Profesor')
 
         profesores = c.fetchall() # Obtener todos los registros encontrados.
         conn.close() # Cerrar la conexión a la base de datos.

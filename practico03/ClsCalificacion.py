@@ -27,7 +27,7 @@ class Calificacion:
         c = conn.cursor() # Crear un cursor para interactuar con la base de datos.
 
         # Ejecutar una consulta SQL para seleccionar todos los registros de la tabla 'Calificaciones'.
-        c.execute('SELECT * FROM Estudiantes')
+        c.execute('SELECT * FROM Estudiante')
 
         calificaciones = c.fetchall() # Obtener todos los registros encontrados.
         conn.close() # Cerrar la conexión a la base de datos.
