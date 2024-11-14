@@ -6,7 +6,7 @@ from ClsProfesor import Profesor
 
 def conectar_db():
     # Conectar a la base de datos 'escuela.db'
-    conn = sqlite3.connect('escolar.db')
+    conn = sqlite3.connect('escolar.db.sql')
     return conn
 
 def menu():
@@ -42,7 +42,6 @@ def main():
 
         # Opción 1: Agregar estudiante
         if opcion == 1:
-            legajo_id = input('Legajo del estudiante: ')
             dni = input('DNI del estudiante: ')
             nombre = input("Nombre del estudiante: ")
             apellido = input('Apellido del estudiante: ')
@@ -52,7 +51,8 @@ def main():
             estado = input('Estado del estudiante: ')
             email = input('Email del estudiante: ')
             # Llama al método agregar para guardar el estudiante
-            Estudiante.guardar(legajo_id, dni, nombre, apellido, edad, fecha_nacimiento, curso, estado, email)
+            estudiante = Estudiante(None, dni, nombre, apellido, edad, fecha_nacimiento, curso, estado, email)
+            Estudiante.guardar(self)
 
         # Opción 2: Agregar profesor
         elif opcion == 2:
@@ -63,17 +63,17 @@ def main():
             estado_profesor = input('Estado del profesor: ')
             email_profesor = input('Email del profesor: ')
             # Llama al método agregar para guardar el profesor
-            Profesor.guardar(dni_id, nombre_profesor, apellido_profesor, curso_profesor, estado_profesor, email_profesor)
+            profesor = Profesor(dni_id, nombre_profesor, apellido_profesor, curso_profesor, estado_profesor, email_profesor)
+            Profesor.guardar(self)
 
         # Opción 3: Agregar materia
         elif opcion == 3:
-            id_materia = input('ID de la materia: ')
             nombre_materia = input('Nombre de la materia: ')
             curso_materia = input('Curso de la materia: ')
             descripcion = input('Descripción de la materia: ')
             horario = input('Horario de la materia: ')
             # Llama al método agregar para guardar la materia
-            Materia.guardar(id_materia, nombre_materia, curso_materia, descripcion, horario)
+            Materia.guardar(None, nombre_materia, curso_materia, descripcion, horario)
 
         # Opción 4: Agregar calificación
         elif opcion == 4:

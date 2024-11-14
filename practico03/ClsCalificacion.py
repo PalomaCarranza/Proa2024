@@ -9,7 +9,7 @@ class Calificacion:
 
     def guardar(self):
         # Conectar a la base de datos 'escolar.db'.
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor() # Crear un cursor para interactuar con la base de datos.
 
         # Ejecutar una consulta SQL para insertar los datos del estudiate. 
@@ -23,7 +23,7 @@ class Calificacion:
     @staticmethod
     def obtener_calificaciones():
         #Cónectar a la base de datos 'escolar.db'
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor() # Crear un cursor para interactuar con la base de datos.
 
         # Ejecutar una consulta SQL para seleccionar todos los registros de la tabla 'Calificaciones'.
@@ -37,7 +37,7 @@ class Calificacion:
     # Método para borrar una calificación de la base de datos por legajo_id e id_materia.
     def borrar(self):
         # Conectar a la base de datos 'escolar.db'.
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor()  # Crear un cursor para interactuar con la base de datos.
 
         # Eliminar el registro de la calificación usando legajo_id e id_materia.
@@ -49,7 +49,7 @@ class Calificacion:
     # Método para modificar la información de una calificación en la base de datos.
     def modificar(self):
         # Conectar a la base de datos 'escolar.db'.
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor()  # Crear un cursor para interactuar con la base de datos.
 
         # Actualizar la nota y la fecha de la calificación en la fila que tiene el legajo_id e id_materia especificados.

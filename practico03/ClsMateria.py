@@ -10,7 +10,7 @@ class Materia:
 
     def guardar(self):
         # Conectar a la base de datos 'escolar.db'.
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor() # Crear un cursor para interactuar con la base de datos.
 
         # Ejecutar una consulta SQL para insertar los datos de la materia. 
@@ -24,7 +24,7 @@ class Materia:
     @staticmethod
     def obtener_materias():
         #Cónectar a la base de datos 'escolar.db'
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor() # Crear un cursor para interactuar con la base de datos.
 
         # Ejecutar una consulta SQL para seleccionar todos los registros de la tabla 'Materias'.
@@ -38,7 +38,7 @@ class Materia:
     # Método para borrar una materia en la base de datos por id_materia.
     def borrar(self):
         # Conectar a la base de datos 'escolar.db'.
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor()  # Crear un cursor para interactuar con la base de datos.
 
         # Eliminar el registro de la materia usando su id_materia.

@@ -11,7 +11,7 @@ class Profesor:
 
     def guardar(self):
         # Conectar a la base de datos 'escolar.db'.
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor() # Crear un cursor para interactuar con la base de datos.
 
         # Ejecutar una consulta SQL para insertar los datos del profesor. 
@@ -25,7 +25,7 @@ class Profesor:
     @staticmethod
     def obtener_profesores():
         #Cónectar a la base de datos 'escolar.db'
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor() # Crear un cursor para interactuar con la base de datos.
 
         # Ejecutar una consulta SQL para seleccionar todos los registros de la tabla 'Profesores'.
@@ -39,7 +39,7 @@ class Profesor:
     # Método para modificar la información de un profesor en la base de datos.
     def modificar(self):
         # Conectar a la base de datos 'escolar.db'.
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor()  # Crear un cursor para interactuar con la base de datos.
 
         # Actualizar los datos del profesor en la fila que tiene el dni_id especificado.

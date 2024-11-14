@@ -16,7 +16,7 @@ class Estudiante:
     # Método para guardar la información del estudiante en la base de datos.
     def guardar(self):
         # Conectar a la base de datos 'escolar.db'.
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor() # Crear un cursor para interactuar con la base de datos.
 
         # Ejecutar una consulta SQL para insertar los datos del estudiate. 
@@ -30,7 +30,7 @@ class Estudiante:
     @staticmethod
     def obtener_estudiantes():
         #Cónectar a la base de datos 'escolar.db'
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor() # Crear un cursor para interactuar con la base de datos.
 
         # Ejecutar una consulta SQL para seleccionar todos los registros de la tabla 'Estudiantes'.
@@ -44,7 +44,7 @@ class Estudiante:
     # Método para modificar la información de un estudiante en la base de datos.
     def modificar(self):
         # Conectar a la base de datos 'escolar.db'
-        conn = sqlite3.connect('escolar.db')
+        conn = sqlite3.connect('escolar.db.sql')
         c = conn.cursor()  # Crear un cursor para ejecutar comandos en la base de datos
 
         # Actualizar los datos del estudiante usando su legajo_id
@@ -55,3 +55,16 @@ class Estudiante:
 
         conn.commit()  # Guardar (confirmar) los cambios en la base de datos
         conn.close()  # Cerrar la conexión a la base de datos
+
+    # Método estático para mostrar todos los estudiantes registrados.
+    @staticmethod
+    def mostrar_todos(conn):
+        # Llama al método obtener_estudiantes, que trae todos los estudiantes de la base de datos.
+        estudiantes = Estudiante.obtener_estudiantes()
+    
+    # Recorre la lista de estudiantes que se obtuvo de la base de datos.
+        for estudiante in estudiantes:
+        # Imprime los datos de cada estudiante en un formato fácil de leer.
+            print(f"Legajo: {estudiante[0]}, DNI: {estudiante[1]}, Nombre: {estudiante[2]} {estudiante[3]}, "
+                f"Edad: {estudiante[4]}, Fecha de nacimiento: {estudiante[5]}, Curso: {estudiante[6]}, "
+                f"Estado: {estudiante[7]}, Email: {estudiante[8]}")
