@@ -52,7 +52,7 @@ def main():
             email = input('Email del estudiante: ')
             # Llama al método agregar para guardar el estudiante
             estudiante = Estudiante(None, dni, nombre, apellido, edad, fecha_nacimiento, curso, estado, email)
-            Estudiante.guardar(self)
+            Estudiante.guardar()
 
         # Opción 2: Agregar profesor
         elif opcion == 2:
